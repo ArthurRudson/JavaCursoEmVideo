@@ -29,3 +29,5 @@ bin/
 .DS_Store
 
 .idea
+/OlaMundoSwing/nbproject/private/
+/OlaMundoSwing/build/
