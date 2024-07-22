@@ -116,7 +116,7 @@ public class telaGenio extends javax.swing.JFrame {
         
         String res = (valor == num) ? f1: f2;
         
-        lblFrase.setFont(new Font("Arial Black", Font.PLAIN, 18));
+        lblFrase.setFont(new Font("Arial Black", Font.PLAIN, 16));
         lblFrase.setText(res);
         
     }//GEN-LAST:event_btnPalpiteActionPerformed
