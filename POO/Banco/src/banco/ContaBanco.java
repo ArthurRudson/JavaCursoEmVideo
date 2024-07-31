@@ -5,6 +5,15 @@ public class ContaBanco {
     private String dono;
     private float saldo;
     private boolean status;
+    
+    public void estadoAtual(){
+        System.out.println("-----------------------------");
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status: " + this.getStatus());
+    }
 
     public ContaBanco() {
         this.saldo = 0.0f;
@@ -62,32 +71,35 @@ public class ContaBanco {
     }
     
     public void fecharConta(){
-        if (saldo > 0){
+        if (this.getSaldo() > 0){
             System.out.println("Conta com dinheiro");
-        } else if (saldo < 0){
+        } else if (this.getSaldo() < 0){
             System.out.println("Conta com debito");
         } else {
             this.setStatus(false);
+            System.out.println("Conta fechado com sucessso");
         }
     }
     
     public void deposita(float s){
-        if (this.getStatus() == true){
+        if (this.getStatus()){
             this.setSaldo(this.getSaldo() + s);
+            System.out.println("Deposito realizado com sucesso a conta de " + this.getDono());
         } else {
-            System.out.println("Impossivel depositar");
+            System.out.println("Impossivel depositar em uma conta fechada");
         }
     }
     
     public void sacar(float s){
-        if (this.getStatus() == true){
-            if (this.getSaldo() > s){
+        if (this.getStatus()){
+            if (this.getSaldo() >= s){
                 this.setSaldo(this.getSaldo() - s);
+                System.out.println("Saque realizado na conta de " + this.getDono());
             } else {
-                System.out.println("Saldo insuficiente");
+                System.out.println("Saldo insuficiente para saque");
             }
         } else {
-            System.out.println("Imposivel sacar");
+            System.out.println("Imposivel sacar de uma conta fechada!");
         }
     }
     
@@ -98,9 +110,10 @@ public class ContaBanco {
         }  else if (this.getTipo().equals("CP")){
             v = 20.0f;
         }
-        if (this.getStatus() == true){
+        if (this.getStatus()){
             if (this.getSaldo() > v){
                 this.setSaldo(this.getSaldo() - v);
+                System.out.println("Mensalidade paga com sucesso por " + this.getDono());
             } else {
                 System.out.println("Saldo Insuficiente");
             }
