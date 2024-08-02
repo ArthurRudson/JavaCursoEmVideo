@@ -16,14 +16,9 @@ public class Aula07 {
         
         l[5] = new Lutador ("Nerdaart", "EUA", 30, 1.81f, 105.7f, 12, 2, 4);
         
-       
-        l[1].apresentar();
-        l[1].perderLuta();
-        l[1].status();
-        //l[2].apresentar();
-        //l[3].apresentar();
-        //l[4].apresentar();
-        //l[5].apresentar();
+       Luta UEC01 = new Luta();
+       UEC01.marcarLuta(l[4], l[5]);
+       UEC01.lutar();
     }
     
 }
