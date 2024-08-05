@@ -9,12 +9,12 @@ public class Gafanhoto extends Pessoa{
         this.totAssistido = 0;
     }
     
-    public String getLofin() {
+    public String getLogin() {
         return login;
     }
 
-    public void setLofin(String lofin) {
-        this.login = lofin;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public int getTotAssistido() {
